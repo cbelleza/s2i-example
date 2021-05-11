@@ -1,13 +1,7 @@
-#!/bin/sh -e
+#!/bin/bash
 
 pushd ${HOME} >/dev/null
 
-# ${HOME}/.m2 is the maven repo dir
-# {$HOME}/target is the class files from the previous build
-if [ -d ./target ]; then
-    tar cf - ./.m2 ./target
-else
-    tar cf - ./.m2
-fi
+tar cf - ./.m2
 
 popd >/dev/null
