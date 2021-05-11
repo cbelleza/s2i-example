@@ -1,2 +1,0 @@
-mv /tmp/artifacts/* ./
-$STI_SCRIPTS_PATH/assemble
