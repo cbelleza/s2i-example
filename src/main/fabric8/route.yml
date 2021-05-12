@@ -1,9 +1,9 @@
-metadata:
-  name: s2i-example
+kind: Route
+apiVersion: route.openshift.io/v1
 spec:
   to:
     kind: Service
     name: s2i-example
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Redirect
+  port:
+    targetPort: http
+  wildcardPolicy: None
