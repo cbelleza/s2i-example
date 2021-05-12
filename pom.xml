@@ -102,6 +102,16 @@
 								</goals>
 							</execution>
 						</executions>
+						<configuration>
+							<generator>
+								<config>
+									<spring-boot>
+										<fromMode>docker</fromMode>
+										<from>registry.redhat.io/fuse7/fuse-java-openshift</from>
+									</spring-boot>
+								</config>
+							</generator>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
