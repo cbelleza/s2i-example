@@ -1,5 +1,6 @@
 ## Running as Spring Boot (local)
 mvn clean package
+
 java -jar target/s2i-example-1.0.0.jar
 
 ## Running in OCP
@@ -7,10 +8,12 @@ oc project s2i
 
 ### OpenJDK S2I
 oc import-image ubi8/openjdk-8 --from=registry.access.redhat.com/ubi8/openjdk-8 -n openshift --confirm
+
 oc new-app openjdk-8~https://github.com/cbelleza/s2i-example
 
 ### FUSE S2I
 oc import-image fuse7-java-openshift:1.8 --from=registry.redhat.io/fuse7/fuse-java-openshift -n openshift --confirm
+
 oc new-app fuse7-java-openshift:1.8~https://github.com/cbelleza/s2i-example
 
 ## Build to OCP + S2I + Fabric 8
