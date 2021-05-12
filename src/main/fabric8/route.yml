@@ -1,0 +1,9 @@
+metadata:
+  name: s2i-example
+spec:
+  to:
+    kind: Service
+    name: s2i-example
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
