@@ -18,3 +18,14 @@ oc new-app fuse7-java-openshift:1.8~https://github.com/cbelleza/s2i-example
 
 ## Build to OCP + S2I + Fabric 8
 mvn clean -DskipTests fabric8:deploy -Popenshift
+
+
+## Habilitar o Increamental Build no BuildConfig
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'fuse7-java-openshift:1.8'
+      incremental: true
